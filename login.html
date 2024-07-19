@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="login-container">
+        <div class="image-section">
+            <img src="Picsart_24-07-04_22-43-51-719.jpg" alt="Login Image">
+        </div>
+        <div class="form-section">
+            <h1>Learning<span class="highlight">Will</span></h1>
+            <p>Welcome Back!</p>
+            <form id="loginForm">
+               Email ID <input type="email" id="email" name="email"  required>
+                Password<input type="password" id="password" name="password" required>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+                <div class="button-group">
+                    <button type="button" class="login-btn" onclick="redirectToProfile()">Log In</button>
+                    <button type="button" class="signup-btn" onclick="redirectToSignup()">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

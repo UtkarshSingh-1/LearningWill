@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java For Beginners - LearningWill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .navbar {
+            background-color: #f6f5e8;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .navbar img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        .navbar .website-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar .website-title .learning {
+            color: black;
+        }
+        .navbar .website-title .will {
+            color: rgb(243, 46, 46); 
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        .course-header {
+            display: flex;
+            gap: 20px;
+        }
+        .course-header img {
+            width: 300px;
+            border-radius: 10px;
+        }
+        .course-details {
+            flex: 1;
+        }
+        .course-title {
+            font-size: 24px;
+            margin: 0;
+        }
+        .course-price {
+            font-size: 20px;
+            color: #f5793b;
+            margin: 10px 0;
+        }
+        .course-description {
+            margin: 20px 0;
+        }
+        .course-features {
+            list-style-type: none;
+            padding: 0;
+        }
+        .course-features li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .course-features li::before {
+            content: '✔️';
+            margin-right: 10px;
+            color: green;
+        }
+        .buy-button {
+            background-color: #f5793b;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer .footer-section {
+            flex: 1;
+            padding: 10px;
+            min-width: 200px;
+        }
+        .footer .footer-section h3 {
+            border-bottom: 2px solid #E67E22;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .footer .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .footer .footer-section ul li {
+            margin: 10px 0;
+        }
+        .footer .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer .footer-section .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #E67E22;
+            font-size: 24px;
+        }
+        .footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="Logo.png" alt="LearningWill Logo">
+            <div class="website-title">
+                <span class="learning">Learning</span><span class="will">Will</span>
+            </div>
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">Exams</a></li>
+            <li><a href="courses.html">Courses</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="course-header">
+            <img src="wallpaper Python - Notebook.jpeg" alt="Java Course">
+            <div class="course-details">
+                <h1 class="course-title">Python For Beginners</h1>
+                <p class="course-price">Price: 2,999/-</p>
+                <p class="course-description">This Python for Beginners course covers fundamental programming concepts, including variables, data types, control structures, and object-oriented programming. Ideal for newcomers, it combines lectures with hands-on coding exercises to build foundational skills.</p>
+                <ul class="course-features">
+                    <li>31 hours of content</li>
+                    <li>Video Lecture</li>
+                    <li>Hands-on exercises</li>
+                </ul>
+                <a href="#" class="buy-button">Buy Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About LearningWill</h3>
+                <p>LearningWill is committed to providing high-quality online courses to help individuals enhance their skills and advance their careers.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@learningwill.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Academics</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-media">
+                    <a href="#"><img src="icon-facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="icon-twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="icon-instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 LearningWill. All rights reserved.</p>
+    </div>
+</body>
+</html>

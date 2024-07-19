@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f4ee;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: url('Picsart_24-07-04_06-45-12-157.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.left-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 100%;
+    max-width: 400px;
+}
+
+.right-section {
+    flex: 1;
+    
+}
+
+.title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #2a2a2a;
+}
+
+.highlight {
+    color: #f5793b;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.feature-text {
+    margin-left: 10px;
+}
+
+.feature-text h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.feature-text p {
+    margin: 5px 0 0;
+    color: #7a7a7a;
+}

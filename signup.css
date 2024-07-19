@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('Picsart_24-07-04_23-05-04-311.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px); /* Adjust the blur level here */
+    z-index: 1;
+}
+
+.login-container {
+    display: flex;
+    width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    z-index: 2;
+    position: relative;
+}
+
+.image-section {
+    flex: 1;
+    background-color: #131144;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-section img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.form-section {
+    flex: 1;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.form-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #131144;
+}
+
+.form-section .highlight {
+    color: red;
+}
+
+.form-section p {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-group .signup-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #ff5733;
+}
+
+.button-group .signup-btn:hover {
+    background-color: #c70039;
+}
+
+.form-section .new-registration {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+    text-decoration: none;
+}
+
+.form-section .new-registration:hover {
+    text-decoration: underline;
+}

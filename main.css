@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.home{
+    background-image: url('Picsart_24-07-03_14-40-26-730.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+main {
+    margin-top: 80px; /* Adjust based on header height */
+    padding: 20px 50px;
+}
+
+.page {
+    margin-bottom: 100px; /* Space between sections */
+}
+
+footer {
+    background-color: #f9f4ee;
+    color: #4b4646;
+    padding: 40px 50px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 50px; /* Adjust as needed */
+}

@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #faf8f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    flex-direction: column;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 140px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.card-content .title {
+    display: block;
+    font-weight: normal;
+    color: gray;
+}
+
+.card-content .affiliation {
+    font-size: 0.9em;
+    color: gray;
+    margin-top: 5px;
+}
+
+.card-content .description {
+    font-size: 0.9em;
+    margin: 10px 0;
+}
+
+.card-content .tags span {
+    display: inline-block;
+    background-color: #f5793b;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+    font-size: 0.8em;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.social-media img {
+    width: 24px;
+    height: 24px;
+}
