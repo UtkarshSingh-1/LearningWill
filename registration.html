@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher ID Generator</title>
+  <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Teacher ID Card Generator</h1>
+
+    <!-- Form for teacher details -->
+    <form id="teacherForm">
+      <label for="name">Name (according to Aadhaar):</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="dob">Date of Birth (According to Aadhaar):</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="aadhaar">Aadhaar Number:</label>
+      <input type="text" id="aadhaar" name="aadhaar" required>
+
+      <label for="photo">Upload Passport-size Photo (max 1MB):</label>
+      <input type="file" id="photo" name="photo" accept="image/*" required>
+
+      <!-- Generate ID button -->
+      <button type="button" id="generateIdBtn">Generate Teacher ID</button>
+    </form>
+
+    <!-- Display the generated ID Card (hidden initially) -->
+    <div id="idCardSection" style="display: none;">
+      <h2>Your Teacher ID Card</h2>
+      <div id="idCard" class="id-card">
+        <img id="profilePic" src="" alt="Profile Photo" class="profile-pic">
+        <div class="id-details">
+          <p id="teacherName"></p>
+          <p id="teacherDob"></p>
+          <p id="teacherPhone"></p>
+          <p id="teacherAadhaar"></p>
+          <p id="teacherId"></p> <!-- Added to show generated Teacher ID -->
+        </div>
+        <div class="qr-code" id="qrCode"></div>
+      </div>
+
+      <!-- Download ID and Get Verified buttons -->
+      <button id="downloadBtn">Download ID</button>
+      <button id="verifyBtn">Get Verified</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="registration.js"></script>
+  </div>
+
+</body>
+</html>
