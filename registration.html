@@ -13,20 +13,47 @@
 
     <!-- Form for teacher details -->
     <form id="teacherForm">
-      <label for="name">Name (according to Aadhaar):</label>
-      <input type="text" id="name" name="name" required>
+      <div class="personal-details">
+        <h2>Personal Details</h2>
+        <label for="name">Name (according to Aadhaar):</label>
+        <input type="text" id="name" name="name" required>
 
-      <label for="dob">Date of Birth (According to Aadhaar):</label>
-      <input type="date" id="dob" name="dob" required>
+        <label for="dob">Date of Birth (according to Aadhaar):</label>
+        <input type="date" id="dob" name="dob" required>
 
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" required>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
 
-      <label for="aadhaar">Aadhaar Number:</label>
-      <input type="text" id="aadhaar" name="aadhaar" required>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="Phone number should be 10 digits">
 
-      <label for="photo">Upload Passport-size Photo (max 1MB):</label>
-      <input type="file" id="photo" name="photo" accept="image/*" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="aadhaar">Aadhaar Number:</label>
+        <input type="text" id="aadhaar" name="aadhaar" required pattern="[0-9]{12}" title="Aadhaar number should be 12 digits">
+      </div>
+
+      <div class="qualification-details">
+        <h2>Qualification Details</h2>
+        <label for="intermediate">Intermediate School Name:</label>
+        <input type="text" id="intermediate" name="intermediate" required>
+
+        <label for="intermediatePercentage">Percentage in Intermediate:</label>
+        <input type="number" id="intermediatePercentage" name="intermediatePercentage" required>
+
+        <label for="graduation">Graduation College Name:</label>
+        <input type="text" id="graduation" name="graduation">
+
+        <label for="graduationPercentage">Graduation Percentage:</label>
+        <input type="number" id="graduationPercentage" name="graduationPercentage">
+
+        <label for="postGraduation">Post-Graduation College Name (if applicable):</label>
+        <input type="text" id="postGraduation" name="postGraduation">
+
+        <label for="postGraduationPercentage">Post-Graduation Percentage (if applicable):</label>
+        <input type="number" id="postGraduationPercentage" name="postGraduationPercentage">
+      </div>
 
       <!-- Generate ID button -->
       <button type="button" id="generateIdBtn">Generate Teacher ID</button>
@@ -36,26 +63,67 @@
     <div id="idCardSection" style="display: none;">
       <h2>Your Teacher ID Card</h2>
       <div id="idCard" class="id-card">
-        <img id="profilePic" src="" alt="Profile Photo" class="profile-pic">
         <div class="id-details">
-          <p id="teacherName"></p>
-          <p id="teacherDob"></p>
-          <p id="teacherPhone"></p>
-          <p id="teacherAadhaar"></p>
-          <p id="teacherId"></p> <!-- Added to show generated Teacher ID -->
+          <p><strong>Name:</strong> <span id="teacherName"></span></p>
+          <p><strong>Date of Birth:</strong> <span id="teacherDob"></span></p>
+          <p><strong>Email:</strong> <span id="teacherEmail"></span></p>
+          <p><strong>Phone Number:</strong> <span id="teacherPhone"></span></p>
+          <p><strong>Aadhaar Number:</strong> <span id="teacherAadhaar"></span></p>
+          <p><strong>Teacher ID Number:</strong> <span id="teacherId"></span></p>
         </div>
-        <div class="qr-code" id="qrCode"></div>
       </div>
 
-      <!-- Download ID and Get Verified buttons -->
-      <button id="downloadBtn">Download ID</button>
-      <button id="verifyBtn">Get Verified</button>
+      <!-- Download ID and Generate Teacher Card buttons -->
+      <button id="downloadBtn">Download Teacher Card</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-    <script src="registration.js"></script>
-  </div>
+    <script>
+      document.getElementById('generateIdBtn').addEventListener('click', function () {
+        // Get form values
+        const name = document.getElementById('name').value;
+        const dob = document.getElementById('dob').value;
+        const email = document.getElementById('email').value;
+        let phone = document.getElementById('phone').value;
+        let aadhaar = document.getElementById('aadhaar').value;
 
+        // Mask Aadhaar number (show only last 4 digits)
+        const maskedAadhaar = '********' + aadhaar.slice(-4);
+
+        // Format phone number (10 digits)
+        if (phone.length !== 10) {
+          alert('Phone number must be 10 digits');
+          return;
+        }
+
+        // Set the values in the ID card
+        document.getElementById('teacherName').innerText = name;
+        document.getElementById('teacherDob').innerText = dob;
+        document.getElementById('teacherEmail').innerText = email;
+        document.getElementById('teacherPhone').innerText = phone;
+        document.getElementById('teacherAadhaar').innerText = maskedAadhaar;
+
+        // Generate Teacher ID
+        const teacherId = Math.floor(1000 + Math.random() * 9000); // Random 4-digit ID
+        document.getElementById('teacherId').innerText = `ID: ${teacherId}`;
+
+        // Show the ID card section
+        document.getElementById('idCardSection').style.display = 'block';
+      });
+
+      document.getElementById('downloadBtn').addEventListener('click', function () {
+        const doc = new jsPDF();
+        const card = document.getElementById('idCard');
+
+        doc.fromHTML(card, 15, 15, {
+          'width': 170
+        });
+
+        doc.save('teacher-card.pdf');
+      });
+    </script>
+
+  </div>
 </body>
 </html>
